@@ -1,0 +1,11 @@
+Docs
+English
+lesson_1
+venv
+.idea
+*.pyc
+*.7z
+test*
+team*
+web_*
+my_*
