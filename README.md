@@ -21,7 +21,7 @@
 - task1 - complete (**not sended**)
 - task2 - **in process** (team work)
 
-### lesson_10_class_scope_namespace - COMPLETE (informed 17/08/20)
+### lesson_10_class_scope_namespace - COMPLETE
 
 ### lesson_11_inheritance
 - task1_task2 - complete (**not sended**)
@@ -31,4 +31,4 @@
 - task1 - complete (**not sended**)
 - task2_task3 - **in process**
 
-### lesson_13_functions_first_class_objects - COMPLETE (informed 17/08/20)
+### lesson_13_functions_first_class_objects - COMPLETE
