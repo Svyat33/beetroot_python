@@ -6,34 +6,13 @@
 # Constraint: use only while loop for iteration
 
 
-digit_list = []
-num_counts = 1
-
-while num_counts <= 100:
-    digit_list.append(num_counts)
-    num_counts += 1
-    # Checking random/insert
-    # print(digit_list_random)
-# Checking list
-num_counts = 0
-print('List ready : ' + str(digit_list))
-
-
-
-
-
-
-
-
-# digit_list_random = []
-# count_index = 0
-#
-# while count_index <= 9:
-#     digit_list_random.insert(0, randint(1, 10))
-#     count_index += 1
-#     # Checking random/insert
-#     # print(digit_list_random)
-# # Checking list
-# # print('List ready : ' + str(digit_list_random))
-# digit_list_sorted = sorted(digit_list_random)
-# print('The largest number is: ' + str(digit_list_sorted[-1]))
+digit_list = list(range(1, 101))
+result_list = []
+i = 0
+print(digit_list)
+while i < len(digit_list):
+    while digit_list[i] % 7 == 0 and digit_list[i] % 5 != 0:
+        result_list.append(digit_list[i])
+        break
+    i += 1
+print(result_list)
