@@ -35,7 +35,7 @@
 
 ### lesson_14_decorators - COMPLETE (not informed)
 
-### lesson_15_decorators_property_staticmethod_classmethod
+### lesson_15_decorators_property_staticmethod_classmethod - IN PROCESS
 
 ### lesson 16_iterators_generators - IN PROCESS
 
