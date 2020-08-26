@@ -35,42 +35,47 @@ class TVController:
         self.channels_list = channels_list
 
     def first_channel(self):
-        return CHANNELS[0] #TODO: Попробовать убрать return в ф-циях которым он не нужен
-
+        #в живом пульте обычно и переключаешься сразу на след канал а не смотришь его название так что логичнее так
+        self.channel_curr = 0
+        return self.current_channel()
+    
     def last_channel(self):
-        return CHANNELS[-1]
+        self.channel_curr = len(CHANNELS) - 1
+        return self.current_channel()  #тут даже вот этот ретурн лишний. Мы переключились это задача кнопки. А вот показать текущее уже карент ченел ну по ТЗ должно возвращать так что возвратим.
 
     def turn_channel(self, n):
-        self.channel_curr = n - 1
-        if len(CHANNELS) >= self.channel_curr > 0:
-            return CHANNELS[self.channel_curr]
+        if len(CHANNELS) >= (n-1) > 0:  # с начала проверили что в разделись
+            self.channel_curr = n - 1   # потом залезаем в ванну. Не наоборот. :)
+            return self.current_channel()
         else:
-            return CHANNELS[self.channel_curr * 0]
+            return self.current_channel()  # если номер несуществует тут либо исключение кидать либо оставаться на том же хотя можно и на первый переключаться.
 
     def next_channel(self):
         if self.channel_curr < (len(CHANNELS) - 1):
             self.channel_curr += 1
-            return CHANNELS[self.channel_curr]
         else:
-            return CHANNELS[self.channel_curr * 0]
+            self.channel_curr = 0
+            
+        return self.current_channel()
 
     def previous_channel(self):
-        if self.channel_curr >= -(len(CHANNELS)):
+        if self.channel_curr >= 1:  # вот эти минус лен как то не разборчиво
             self.channel_curr -= 1
-            return CHANNELS[self.channel_curr]
         else:
-            return CHANNELS[self.channel_curr * 0]
+            self.channel_curr = len(CHANNELS) - 1
+            
+        return self.current_channel()
 
     def current_channel(self):
         return f'{CHANNELS[self.channel_curr]}'
 
-    def is_exist(self, name_or_num):
-        if isinstance(name_or_num, int) and name_or_num <= len(CHANNELS):
-            return "Yes"
+    def is_exist(self, name_or_num) -> boolean:
+        if isinstance(name_or_num, int) and 0 < name_or_num <= len(CHANNELS):  # -10 будет меньше но не валидно потому проверим на вхождение между нолем и длинной.
+            return True
         elif isinstance(name_or_num, str) and name_or_num in CHANNELS:
-            return "Yes"
+            return True
         else:
-            return "No"
+            return False
 
 
 if __name__ == '__main__':
