@@ -1,3 +1,4 @@
+backups
 Docs
 English
 lesson_1
@@ -5,8 +6,12 @@ venv
 .idea
 *.pyc
 *.7z
+*.zip
+*.ipynb
+student_*
 test*
 team*
 web_*
 my_*
 svyatoslav_*
+temp*

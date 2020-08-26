@@ -33,4 +33,11 @@
 
 ### lesson_13_functions_first_class_objects - COMPLETE
 
-### lesson_14_decorators - COMPLETE (informed 21/08/20)
+### lesson_14_decorators - COMPLETE (not informed)
+
+### lesson_15_decorators_property_staticmethod_classmethod
+
+### lesson 16_iterators_generators - IN PROCESS
+
+### lesson 17_testing
+- task1_unittest_tvcontroller - (**not sended**)
