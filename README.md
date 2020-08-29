@@ -18,17 +18,17 @@
 ### lesson_8_try_except - COMPLETE
 
 ### lesson_9_context_manager_JSON
-- task1 - complete (**not sended**)
+- task1 - complete (**not informed**)
 - task2 - **in process** (team work)
 
 ### lesson_10_class_scope_namespace - COMPLETE
 
 ### lesson_11_inheritance
-- task1_task2 - complete (**not sended**)
+- task1_task2 - complete (**not informed**)
 - task3(product_store) - **in process**
 
 ### lesson_12_polymorphism_encapsulation
-- task1 - complete (**not sended**)
+- task1 - complete (**not informed**)
 - task2(library)_task3(fraction) - **in process**
 
 ### lesson_13_functions_first_class_objects - COMPLETE
@@ -40,4 +40,8 @@
 ### lesson 16_iterators_generators - IN PROCESS
 
 ### lesson 17_testing
-- task1_unittest_tvcontroller - (**not sended**)
+- task1_unittest_tvcontroller - (**not informed**)
+
+### lesson 18_modules_standard_library
+- task1_import - complete (**not informed**)
+- task2_sys_module - complete (**not informed**)
