@@ -25,7 +25,7 @@ PHONEBOOK_FILENAME = 'pb.json'
 
 # Checking for exist then asking user: Demo? Create? Quit?
 def is_phonebook():
-    try:
+    try:   # по стилю не рекомендуется делать такую большую вложенность. 
         with open(PHONEBOOK_FILENAME, 'r') as f_obj:
             # Просто проверка. Можно удалить. Срабатывает лишний вывод.
             print("It's exist")
@@ -78,7 +78,7 @@ def read_phonebook():
         return ret
     except FileNotFoundError:
         return "File not found ERROR"
-    except:
+    except:  # тут уже можно было бы ошибку и джсон лоада обработать тогда
         pass
 
 phonebook_read = read_phonebook()
@@ -87,7 +87,7 @@ def show_phonebook():
     rec_count = 0
     for contact in phonebook_read:
         rec_count +=1
-        try:
+        try:   # А тут я не могу понять в каком случае может быть ексепшн?
             for k, v in contact.items():
                 if k == 'Record ID':
                     v = v[:8]
@@ -106,14 +106,14 @@ def show_phonebook():
 def deleting():
     cmd = input('enter id')
     for contact in phonebook_read:
-        if cmd == contact['id'][:5]:
-            del contact
+        if cmd == contact['id'][:5]: 
+            del contact    # - и что, удалило? - тутжє :)   (проверь)
         else:
             pass
 
 # To print separate contacts another function is used.
 def print_single_contact(contact):
-    for k, v in contact.items():
+    for k, v in contact.items():   # ага а тут значит ты не делаешь тру блока потому что проблем не ожилаешь. Кстати это ведь дублирование кода не так ли?
           if k != 'App_No':
                print(f'{k} : {v}')
 
@@ -122,7 +122,7 @@ def print_single_contact(contact):
 
 
 
-def save_phonebook():
+def save_phonebook():  # ей д чистоты не хватает только параметра что  и куда сохранять. и можно было бы легко тогда писать тесты на нее. 
     with open(PHONEBOOK_FILENAME, 'w') as f_obj:
         json.dump(phonebook_read, f_obj)
 
@@ -142,7 +142,7 @@ def add_record():
 
 
 def found_chk(pb_rec, sample):
-    try:
+    try:    # опять не вижу где может случится проблема тут
         rec_str = ''
         for i in pb_rec.values():
             rec_str += "~~|~~" + str(i)
@@ -151,14 +151,13 @@ def found_chk(pb_rec, sample):
         return False
 
 
-def search_record():
-    def search_record():
-        ret = []
-        sample = input('Type sample:')
-        for pb_rec in phonebook_read:
-            if found_chk(pb_rec, sample):
-                ret.append(pb_rec)
-        return ret
+def search_record():    # а приняла бы она параметром что искать и где искать и была бы чистой функцией. Которую легко тестить..
+    ret = []
+    sample = input('Type sample:')
+    for pb_rec in phonebook_read:
+        if found_chk(pb_rec, sample):
+            ret.append(pb_rec)
+    return ret
 
 
 
