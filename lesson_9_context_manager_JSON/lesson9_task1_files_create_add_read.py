@@ -28,7 +28,7 @@ if __name__ == '__main__':
     except FileNotFoundError:
         print('Oops! File not found in this dir.')
     try:
-        with open(path.join(current_dir, '/wrongfolder/myfile.txt')) as myfile_wrong_dir:
+        with open(path.join(current_dir, 'wrongfolder', 'myfile.txt')) as myfile_wrong_dir:
             file_print_wrong_dir = myfile_wrong_dir.read()
         print(file_print_wrong_dir)
     except FileNotFoundError:
